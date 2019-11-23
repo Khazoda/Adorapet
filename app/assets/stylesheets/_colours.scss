@@ -1,0 +1,20 @@
+:root {
+  --focus: #{rgb(0, 255, 76)};
+  --background: white;
+  --t_p: black;
+  --t_s: darkgrey;
+  --p: black;
+  --s: darkgrey;
+  --t: grey;
+}
+
+$focus: var(--focus);
+
+$background: var(--background);
+
+$t_p: var(--t_p);
+$t_s: var(--t_s);
+
+$p: var(--p);
+$s: var(--s);
+$t: var(--t);

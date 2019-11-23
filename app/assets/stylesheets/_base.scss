@@ -1,0 +1,27 @@
+@import "mixins";
+@import "colours";
+
+html,body {
+  height: 100%;
+}
+
+html * {
+  font-family: "manrope";
+}
+
+body {
+  background-color: $background;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+main {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "lside main main main rside"
+    "lside main main main rside"
+    "lside main main main rside";
+}

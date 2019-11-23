@@ -1,0 +1,28 @@
+@mixin btn {
+  display: inline-block;
+  border: none;
+  padding: 1fr 1fr;
+  margin: 0;
+  text-decoration: none;
+  color: $t_p;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+
+  background: linear-gradient(180deg, rgba(210, 61, 24, 1), rgb(255, 136, 0));
+  transition: background-position 0.25s, transform 0.25s, box-shadow 0.25s;
+  background-size: 1px 200px;
+
+  box-shadow: 0px 6px 0px rgb(163, 47, 18), 0px 3px 4px rgba(0, 0, 0, 0.4);
+  &:hover {
+    background-position: 100px;
+    transform: translate(0, 4px);
+    box-shadow: 0px 2px 0px rgb(163, 47, 18), 0px 3px 4px rgba(0, 0, 0, 0.4);
+  }
+  &:focus {
+    outline: none;
+  }
+}
