@@ -6,6 +6,8 @@
   --p: black;
   --s: darkgrey;
   --t: grey;
+
+  --formbutton: rgb(175, 175, 175);
 }
 
 $focus: var(--focus);
@@ -18,3 +20,5 @@ $t_s: var(--t_s);
 $p: var(--p);
 $s: var(--s);
 $t: var(--t);
+
+$fb: var(--formbutton);

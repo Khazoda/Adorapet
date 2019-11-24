@@ -1,4 +1,4 @@
 @import "base";
-button {
-  @include btn;
+button#play {
+  @include playbtn;
 }

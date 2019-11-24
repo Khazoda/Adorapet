@@ -1,0 +1,62 @@
+@import "base";
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  background-color: $background;
+}
+h2 {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+}
+form {
+  grid-column: 2/3;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  align-self: center;
+}
+.actions {
+  width: 100%;
+
+  @include btn;
+  input {
+    min-width: 100%;
+    background: none;
+    border: none;
+    &:hover {
+      background: none;
+    }
+  }
+}
+form .actions {
+  margin: 10px;
+}
+#switchtologin {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  @include btn;
+  margin-top: 20px;
+  justify-self: center;
+
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+#switchtosignup {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  @include btn;
+  margin-top: 20px;
+  justify-self: center;
+
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}

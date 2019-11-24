@@ -1,10 +1,9 @@
 @import "base";
 header {
   min-height: 96px;
-  margin-top: 48px;
 
   display: grid;
-  grid-template-columns: 0.25fr 1fr 0.25fr;
+  grid-template-columns: 0.4fr 1fr 0.4fr;
   grid-template-rows: 1fr;
   grid-template-areas: "left center right";
 
@@ -31,22 +30,59 @@ header {
     grid-area: right;
     display: inline-flex;
     max-height: 100%;
+
+    #loginsignupcontainer {
+      height: 5em;
+      display: flex;
+      .button_to {
+        margin-bottom: 1em;
+      }
+    }
+
+    #likesrankcontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 1em;
+      height: 5em;
+      p {
+        margin: 0px;
+        color: $t_s;
+      }
+    }
     #usericon {
       width: 5em;
       height: 5em;
       justify-self: center;
-      align-self: center;
+      margin-top: 20px;
       background-color: whitesmoke;
       border: 2px solid $p;
       border-radius: 50%;
     }
     div {
-      align-self: center;
-      height: 5em;
+      margin-top: 20px;
+      height: 4em;
+      max-width: 100%;
       margin-left: 1em;
-      p {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      #username {
         margin: 0px;
-        color: $t_s;
+      }
+      form {
+        @include btn;
+        align-self: center;
+        display: block;
+        min-width: 100%;
+        input {
+          min-width: 100%;
+          background: none;
+          border: none;
+          &:hover {
+            background: none;
+          }
+        }
       }
     }
   }
