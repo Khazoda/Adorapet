@@ -1,4 +1,9 @@
-<h1>Profilepage#profile</h1>
+<header>
+<%= render partial: '/pages/header', locals: { header: "Profile"} %>
+</header>
+  <div id="bottomdivider"></div>
+<%= content_tag :p, current_user.username,id:"username" %><br/>
+
 <p>
   Add functionality for changing profile picture, uploading pets and then images
   for those pets and also list number of likes each pet and each pet photo has.

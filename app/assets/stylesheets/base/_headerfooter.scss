@@ -1,6 +1,7 @@
 @import "base";
 header {
   min-height: 96px;
+  padding-bottom: 10px;
 
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
@@ -12,17 +13,26 @@ header {
     justify-self: center;
     display: inline-flex;
     flex-direction: column;
-    max-width: 50%;
     h1 {
       color: $t_p;
       font-size: 48px;
       justify-self: center;
       margin: 0px;
     }
+    // only applies to play button on homepage
     #play {
+      @include playbtn;
       justify-self: center;
       align-self: center;
       font-size: 24px;
+      width: 100%;
+    }
+    //otherwise more standard button styling is used
+    .button_to {
+      @include btn;
+      justify-self: center;
+      align-self: flex-start;
+      font-size: 18px;
       width: 100%;
     }
   }
@@ -51,6 +61,7 @@ header {
       }
     }
     #usericon {
+      @include imagebtn;
       width: 5em;
       height: 5em;
       justify-self: center;
@@ -75,15 +86,22 @@ header {
         align-self: center;
         display: block;
         min-width: 100%;
-        input {
-          min-width: 100%;
-          background: none;
-          border: none;
-          &:hover {
-            background: none;
-          }
-        }
       }
     }
   }
+}
+
+#bottomdivider {
+  height: 2px;
+  width: 100%;
+  justify-self: center;
+  background: -webkit-gradient(
+    radial,
+    75% 75%,
+    0,
+    50% 50%,
+    500,
+    from(#777),
+    to(#fff)
+  );
 }

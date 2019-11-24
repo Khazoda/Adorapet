@@ -7,6 +7,9 @@
   --s: darkgrey;
   --t: grey;
 
+  --positive: green;
+  --negative: red;
+
   --formbutton: rgb(175, 175, 175);
 }
 
@@ -22,3 +25,6 @@ $s: var(--s);
 $t: var(--t);
 
 $fb: var(--formbutton);
+
+$pos: var(--positive);
+$neg: var(--negative);

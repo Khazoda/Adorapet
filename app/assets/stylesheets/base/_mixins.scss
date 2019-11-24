@@ -51,4 +51,31 @@
   * {
     cursor: pointer;
   }
+  //removes default rails button styling from child input element in button_to objects
+  input {
+    min-width: 100%;
+    background: none;
+    border: none;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+@mixin imagebtn {
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  background-size: 1px 200px;
+
+  box-shadow: 0px 4px 0px $pos, 0px 3px 4px rgba(0, 0, 0, 0.4);
+  &:hover {
+    transform: translate(0, 4px);
+    box-shadow: 0px 1px 0px $pos, 0px 3px 4px rgba(0, 0, 0, 0.4);
+  }
+  &:focus {
+    outline: none;
+  }
+  * {
+    cursor: pointer;
+  }
 }

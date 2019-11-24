@@ -1,7 +1,11 @@
 <div id="center">
-  <h1>Adorapet</h1>
+  <%= content_tag :h1, header,id:"h1" %>
   <% if user_signed_in? %>
-  <button id="play">Play</button>
+    <% if controller.controller_name == "landing_page"%>
+      <button id="play">Play</button>
+    <% else %>
+      <%= button_to 'Home', root_path, id:"gohome", method: :get %>
+    <% end %>
   <% end %>
 
 </div>
