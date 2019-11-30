@@ -14,8 +14,11 @@
   
   <% if user_signed_in? %>
     <%= content_tag :div,content_tag(:p,"0 Likes",class:"likes")+content_tag(:p,"Position",class:"likes"),id:"likesrankcontainer"%>
+    <%= link_to image_tag("default_user.png", :alt => "usericon", class:"usericon active"),profilepage_profile_path %>
+  <% else %>
+    <%= image_tag("default_user.png", :alt => "usericon", class:"usericon") %>
   <% end %>
-    <%= link_to image_tag("default_user.png", :alt => "usericon", id:"usericon"),profilepage_profile_path %>
+    
   <% if user_signed_in? %>
   <div>
     <%= content_tag :p, current_user.username,id:"username" %><br/>

@@ -2,11 +2,8 @@
 <%= render partial: '/pages/header', locals: { header: "Profile"} %>
 </header>
   <div id="bottomdivider"></div>
-<%= content_tag :p, current_user.username,id:"username" %><br/>
 
-<p>
-  Add functionality for changing profile picture, uploading pets and then images
-  for those pets and also list number of likes each pet and each pet photo has.
-  This should interact with new table in database that's linked to user in User
-  table
-</p>
+<main>
+<%= render partial: '/pages/profilepage/userprofile' %>
+</main>
+<%= content_tag :p, current_user.username,id:"username" %><br/>

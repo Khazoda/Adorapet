@@ -1,21 +1,36 @@
-@import "mixins";
-@import "colours";
+@import 'mixins';
+@import 'colours';
 
-html,
-body {
+html {
+  line-height: 1;
   height: 100%;
+}
+
+@font-face {
+  font-family: 'manrope-regular';
+  src: url(asset-path('fonts/manrope-regular.otf'));
+}
+
+html * {
+  font-family: 'manrope-regular';
+}
+
+body {
+  margin: 0;
+
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  min-height: 100%;
+  vertical-align: baseline;
 }
 
 header {
   margin-top: 0px;
 }
 
-html * {
-  font-family: "manrope";
-}
-
 body {
-  display: inline;
   background-color: $background;
   margin-right: 10px;
   margin-left: 10px;
@@ -27,7 +42,7 @@ main {
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "lside main main main rside"
-    "lside main main main rside"
-    "lside main main main rside";
+    'lside main main main rside'
+    'lside main main main rside'
+    'lside main main main rside';
 }

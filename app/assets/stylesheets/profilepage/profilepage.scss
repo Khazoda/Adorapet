@@ -1,5 +1,48 @@
 @import "main";
 
-body {
-  background-color: yellow;
+div#editableusericon {
+  grid-column: 3;
+  justify-self: center;
+  margin-top: 10px;
+  width: 10rem;
+  display: inline-flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(226, 226, 226, 0.2), rgba(75, 75, 75, 0.2));
+  box-shadow: 0px 4px 0px rgb(167, 167, 167), 0px 3px 4px rgba(0, 0, 0, 0.4);
+  a {
+    display: flex;
+    height: 9rem;
+    width: 9rem;
+    margin: auto;
+    &:hover {
+      background: url("/assets/edit_overlay.png");
+    }
+    img {
+      @include imagebtn;
+      height: 9rem;
+      width: 9rem;
+      margin: auto;
+
+      background-color: whitesmoke;
+      border: 2px solid $p;
+      border-radius: 0%;
+      &:hover {
+        background-color: $neg;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: $t_p;
+  }
+}
+
+#avatarform {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
