@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "database": ".\\db/development.sqlite3",
+            "dialect": "SQLite",
+            "isActive": true,
+            "isConnected": true,
+            "name": "development"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

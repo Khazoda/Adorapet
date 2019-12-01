@@ -1,4 +1,4 @@
-@import "main";
+@import 'main';
 
 div#editableusericon {
   grid-column: 3;
@@ -14,20 +14,21 @@ div#editableusericon {
     height: 9rem;
     width: 9rem;
     margin: auto;
-    &:hover {
-      background: url("/assets/edit_overlay.png");
-    }
-    img {
+    img#profilechangeimage {
       @include imagebtn;
-      height: 9rem;
-      width: 9rem;
+      height: 100%;
+      width: 100%;
       margin: auto;
 
-      background-color: whitesmoke;
+      background-color: $smoke;
       border: 2px solid $p;
       border-radius: 0%;
+      box-shadow: none;
+      transition: all 0.2s;
       &:hover {
-        background-color: $neg;
+        transform: translate(0, 0);
+        box-shadow: inset 0 0 2em 1em $pos;
+        border-radius: 25%;
       }
     }
   }
@@ -40,9 +41,44 @@ div#editableusericon {
 
 #avatarform {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  div {
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    width: 100%;
+  }
+  input {
+    @include btn;
+    width: 100%;
+  }
+  input#avatar {
+    background-color: $fl;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    + label {
+      margin: auto;
+      width: 100%;
+      border: 1px solid $fb;
+      padding: 4px;
+      transition: background-color 0.2s ease;
+      &:hover {
+        background-color: $t;
+      }
+    }
+  }
 }

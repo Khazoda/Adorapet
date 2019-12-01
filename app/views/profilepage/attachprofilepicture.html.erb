@@ -5,7 +5,4 @@
 <main>
   <%= render partial: '/pages/profilepage/userprofile' %>
 </main>
-<footer>
-  <div id="divider"></div>
-  <%= render partial: '/pages/footer' %>
-</footer>
+<%= content_tag :p, current_user.username,id:"username" %><br/>

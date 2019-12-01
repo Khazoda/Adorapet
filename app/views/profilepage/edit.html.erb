@@ -1,5 +1,8 @@
-
 <%= form_with(id:"avatarform") do |f|%>
-<%= f.file_field :avatar%><br/>
-<%= f.submit%>
+  <div>
+    <%= f.file_field :avatar %><%=label_tag "avatar", "Choose File"%><br/>
+  </div>
+  <div>
+    <%= button_to "Submit",profilepage_attachprofilepicture_path, method:'get'%>
+  </div>
 <% end %>

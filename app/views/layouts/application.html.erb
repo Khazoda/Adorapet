@@ -4,10 +4,13 @@
     <title>Adorapet</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+    <%if current_page?(controller: 'devise/sessions', action: 'create')||current_page?(controller: 'devise/registrations', action: 'new') %>
+      <%= yield %>
+    <%end%>
   </body>
 </html>

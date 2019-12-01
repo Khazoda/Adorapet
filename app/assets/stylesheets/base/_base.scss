@@ -34,6 +34,7 @@ body {
   background-color: $background;
   margin-right: 10px;
   margin-left: 10px;
+  min-height: 100vh;
 }
 
 main {
@@ -45,4 +46,19 @@ main {
     'lside main main main rside'
     'lside main main main rside'
     'lside main main main rside';
+}
+
+#divider {
+  height: 2px;
+  width: 100%;
+  justify-self: center;
+  background: -webkit-gradient(
+    radial,
+    75% 75%,
+    0,
+    50% 50%,
+    500,
+    from(#777),
+    to(#fff)
+  );
 }

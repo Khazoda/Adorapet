@@ -7,11 +7,16 @@
   --s: darkgrey;
   --t: grey;
   --foot: white;
+  --smoke: whitesmoke;
 
   --positive: green;
   --negative: red;
 
   --formbutton: rgb(175, 175, 175);
+  --formlight: #e1e1e1;
+
+  // leaderboard grid vars
+  --rowNum: 4;
 }
 
 $focus: var(--focus);
@@ -26,8 +31,13 @@ $s: var(--s);
 $t: var(--t);
 
 $fb: var(--formbutton);
+$fl: var(--formlight);
 
 $pos: var(--positive);
 $neg: var(--negative);
 
 $foot: var(--foot);
+$smoke: var(--smoke);
+
+//leaderboard grid vars scss
+$rowNum: var(--rowNum);

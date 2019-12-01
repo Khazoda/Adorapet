@@ -1,3 +1,5 @@
-
-<%= content_tag(:div,image_link_to("default_user.png", :alt => "usericon",id:"profilechangeimage")+content_tag(:p,"Click to Change"),id:"editableusericon") %>
-
+<%if current_user.avatar.attached? %>
+  <%= content_tag(:div,image_link_to(current_user.avatar,profilepage_edit_path, {:alt => "usericon",id:"profilechangeimage"})+content_tag(:p,"Click to Change"),id:"editableusericon") %>
+<%else%>
+  <%= content_tag(:div,image_link_to("default_user.svg",profilepage_edit_path, {:alt => "usericon",id:"profilechangeimage"})+content_tag(:p,"Click to Change"),id:"editableusericon") %>
+<%end%>
