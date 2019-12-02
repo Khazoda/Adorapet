@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get 'profilepage/edit'
   post 'profilepage/edit' => 'profilepage#attachprofilepicture'
   get 'profilepage/attachprofilepicture' => 'profilepage'
+
+  post 'pets/create' => 'pets#create'
+  post 'profilepage/addpicture'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

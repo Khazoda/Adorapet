@@ -3,3 +3,37 @@
 <%else%>
   <%= content_tag(:div,image_link_to("default_user.svg",profilepage_edit_path, {:alt => "usericon",id:"profilechangeimage"})+content_tag(:p,"Click to Change"),id:"editableusericon") %>
 <%end%>
+<div class = "gridcontainer pet">
+  <%= content_tag :h3, 'Add a new pet' %>
+  <%= form_with :url => pets_create_path(@pet), class: "addpet" do |f| %>
+    <%= f.text_field :name,placeholder:"Name (e.g Whiskers)" %>
+    <%= f.text_field :species,placeholder:"Species (e.g Cat)" %>
+    <%= f.file_field :avatar %>
+    <%= f.submit "Create",class: "submitbtn" %>
+  <% end %>
+</div>
+<%= content_tag(:div,"pets", class:"petsContainer") do %>
+  <% current_user.pets.each do |pet| %>
+    <% if pet.avatar.attached? %>
+      <div>
+        <%= content_tag :h3, pet.name %>
+        <%=image_link_to(pet.avatar,"/", {:alt => "pet_icon",class:"petimage"})%>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<div class="gridcontainer picture">
+  <%= content_tag :h3, 'Add a new picture' %>
+  <%= content_tag :h5, '(for currently selected pet)' %>
+  <%= form_with :url => pets_create_path(@pet), class: "addpic" do |f| %>
+    <%= f.text_field :name,placeholder:"This is all" %>
+    <%= f.text_field :species,placeholder:"placeholder" %>
+    <%= f.file_field :avatar %>
+    <%= f.submit "obviously",class: "submitbtn" %>
+  <% end %>
+</div>
+<%= content_tag(:div,"pictures", class:"petPicturesContainer") do %>
+  <%= content_tag(:div,"imgBox1", class:"imgBox") +
+  content_tag(:div,"imgBox2", class:"imgBox")
+  %>
+<% end %>

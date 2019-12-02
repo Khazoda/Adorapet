@@ -8,6 +8,7 @@ function setCookie(name, value, days) {
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
+
 function getCookie(name) {
   var nameEQ = name + "=";
   var ca = document.cookie.split(";");
@@ -18,6 +19,7 @@ function getCookie(name) {
   }
   return null;
 }
+
 function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
@@ -36,4 +38,11 @@ function changeCSS(cssFile, cssLinkIndex) {
     .replaceChild(newlink, oldlink);
 }
 
-export { setCookie, getCookie, eraseCookie, changeCSS };
+
+
+export {
+  setCookie,
+  getCookie,
+  eraseCookie,
+  changeCSS
+};
