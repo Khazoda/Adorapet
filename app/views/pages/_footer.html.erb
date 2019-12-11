@@ -1,11 +1,16 @@
-<div>
-  <div id="contactflexbox">
-    <%= link_to("Contact Me",contact_path, method: "GET") %>
-    <%# This link is only for debugging and marking, and wouldn't be in a production build%>
-    <%= link_to("<<Mailer Previews>>","/rails/mailers") %>
+<div id="footercontainer">
+  <%= image_tag 'FooterDesign.png' %>
+  <div id="outerdiv">
+    <div id="innerdiv">
+      <div id="contactflexbox">
+        <%= link_to("Contact Me",contact_path, method: "GET") %>
+        <%# This link is only for debugging and marking, and wouldn't be in a production build%>
+        <%= link_to("<<Mailer Previews>>","/rails/mailers") %>
+      </div>
+      <p>|</p>
+      <%= link_to("GitHub Repo","https://github.com/Khazoda/Adorapet") %>
+      <p>|</p>
+      <p>&copy2019 June Faleiro</p>
+    </div>
   </div>
-  <p>|</p>
-  <%= link_to("GitHub Repo","https://github.com/Khazoda/Adorapet") %>
-  <p>|</p>
-  <p>&copy2019 June Faleiro</p>
 </div>

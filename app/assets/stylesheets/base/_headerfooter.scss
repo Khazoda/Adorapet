@@ -96,6 +96,7 @@ header {
 footer {
   height: 4rem;
   background-color: $foot;
+  border-top: 2px solid $p;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -106,37 +107,52 @@ footer {
   grid-template-areas:
     'divider'
     'content';
-  div {
-    display: flex;
-    grid-area: content;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    a {
-      color: $t_p;
-      text-decoration: none;
-      cursor: pointer;
-      align-self: center;
-      padding: 0 1rem 0 1rem;
-      &:hover {
-        color: $lhl;
-      }
+  #footercontainer {
+    position: relative;
+    img {
+      position: fixed;
     }
-    #contactflexbox {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center;
-      a {
-        color: $t_p;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-          color: $lhl;
+    div#outerdiv {
+      position: fixed;
+      left: 50%;
+
+      grid-area: content;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      div#innerdiv {
+        position: relative;
+        left: -50%;
+        display: flex;
+        flex-direction: row;
+        a {
+          color: $t_p;
+          text-decoration: none;
+          cursor: pointer;
+          align-self: center;
+          padding: 0 1rem 0 1rem;
+          &:hover {
+            color: $lhl;
+          }
+        }
+        #contactflexbox {
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          justify-content: center;
+          a {
+            color: $t_p;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+              color: $lhl;
+            }
+          }
         }
       }
     }
   }
+
   p {
     align-self: center;
     padding: 0 1rem 0 1rem;
