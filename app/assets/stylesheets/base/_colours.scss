@@ -9,6 +9,8 @@
   --foot: grey;
   --smoke: whitesmoke;
 
+  --linkhl: lightblue;
+
   --positive: green;
   --negative: red;
 
@@ -29,6 +31,8 @@ $t_s: var(--t_s);
 $p: var(--p);
 $s: var(--s);
 $t: var(--t);
+
+$lhl: var(--linkhl);
 
 $fb: var(--formbutton);
 $fl: var(--formlight);

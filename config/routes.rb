@@ -11,5 +11,8 @@ Rails.application.routes.draw do
 
   post 'pets/create' => 'pets#create'
   post 'profilepage/addpicture'
+
+  get 'contact' => 'landing_page#contact'
+  post 'request_contact' => 'landing_page#request_contact'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

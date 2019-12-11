@@ -1,14 +1,18 @@
 <div id="center">
   <%= content_tag :h1, header,id:"h1" %>
   <% if user_signed_in? %>
-    <% if controller.controller_name == "landing_page"%>
+    <%# If current page is the landing page..%>
+    <% if current_page?("/")%>
+      <%# add play button to header%>
       <button id="play">Play</button>
+      <%# else add a button to return to landing page%>
     <% else %>
       <%= button_to 'Home', root_path, id:"gohome", method: :get %>
     <% end %>
   <% end %>
 </div>
 <div id="right">
+  <%# displays different top right elements based on user login status%>
   <% if user_signed_in? %>
     <%= content_tag :div,content_tag(:p,"0 Likes",class:"likes")+content_tag(:p,"Position",class:"likes"),id:"likesrankcontainer"%>
     <% if current_user.avatar.attached? %>

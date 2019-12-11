@@ -25,6 +25,8 @@ gem 'devise'
 gem 'rake', '~> 13.0.1'
 gem 'jquery-turbolinks'
 
+gem 'rails-controller-testing'
+
 gem 'image_processing', '~> 1.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

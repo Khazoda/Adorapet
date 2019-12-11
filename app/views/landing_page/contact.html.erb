@@ -1,0 +1,17 @@
+<header>
+  <%= render partial: '/pages/header', locals: { header: "Adorapet"} %>
+</header>
+<h1>
+  <%= t('.title') %>
+</h1>
+<p>
+  <%= t('.contact_me') %>
+</p>
+<%= form_with :url => request_contact_path, method: 'post',class: "contactform" do |f| %>
+  <%= f.text_field :name,placeholder:"Your Name" %>
+  <%= f.text_field :email,placeholder:"Your E-Mail" %>
+  <%= f.text_field :message,placeholder:"Please enter your message here" %>
+  <%= f.submit "Send",class: "submitbtn" %>
+<% end %>
+<p>Once you have pressed Send please check your console for the sent email,
+  just how it was done in the lab. thank you.</p>

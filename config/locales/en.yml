@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: 'Hello world'
+  app_title: Adorapet
+  landing_page:
+    landing_page:
+      title: Adorapet
+
+    contact:
+      title: Contact Me
+      contact_me: Fill out the form to send me a question or feedback.
+
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.
