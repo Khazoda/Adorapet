@@ -1,24 +1,4 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Adorapet COM2025 2019 Coursework
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Showcase video: https://www.youtube.com/watch?v=DzfrfoqECPA&feature=youtu.be
