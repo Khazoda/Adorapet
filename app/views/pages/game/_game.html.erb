@@ -1,0 +1,25 @@
+<%# Refreshes the page when clicked, which calls the index action and shows 2 new pets%>
+<%= button_to(t('game.refresh'), game_path,id:"newpetsbtn", method: :post) %>
+<%= content_tag :h3, t('game.choose') %>
+<%= image_tag("GameFlairL.svg",{:alt => "pet_icon",class:"flairL"})%>
+<%# Div for the two pet objects%>
+<%= content_tag(:div,"pets", class:"petsContainer") do %>
+  <%# $leftpet retrieved from game controller%>
+  <% if $leftpet.avatar.attached? %>
+    <div>
+      <%= content_tag :h3, $leftpet.name %>
+      <%# Utilizing my custom helper to create an image of the retrieved pet and also giving it a link to an action in the game controller that increments the likes value by one of that pet%>
+      <%= image_link_to($leftpet.avatar,game_pick_left_path,{:controller => :game, :action => :pick_left,:alt => "pet_icon",class:"petimage"})%>
+    </div>
+  <% end %>
+  <%= content_tag :h2, t('game.vs'),id:"VS" %>
+  <%# $rightpet retrieved from game controller%>
+  <% if $rightpet.avatar.attached? %>
+    <div>
+      <%= content_tag :h3, $rightpet.name %>
+      <%# Utilizing my custom helper to create an image of the retrieved pet and also giving it a link to an action in the game controller that increments the likes value by one of that pet%>
+      <%= image_link_to($rightpet.avatar,game_pick_right_path,{:controller => :game, :action => :pick_right,:alt => "pet_icon",class:"petimage"})%>
+    </div>
+  <% end %>
+<% end %>
+<%= image_tag("GameFlairR.svg",{:alt => "pet_icon",class:"flairR"})%>

@@ -7,7 +7,30 @@ header {
   grid-template-columns: 0.4fr 1fr 0.4fr;
   grid-template-rows: 1fr;
   grid-template-areas: 'left center right';
+  div#left {
+    margin-left: 48px;
+    margin-right: auto;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #darktheme {
+      @include btn;
+      min-height: 48px;
+      min-width: 48px;
+      max-height: 48px;
+      max-width: 48px;
+
+      background-size: 100%;
+      margin-right: 20px;
+      &.light {
+        background-color: $background_d;
+        &:hover {
+          background-color: $foot;
+        }
+      }
+    }
+  }
   div#center {
     grid-area: center;
     justify-self: center;
@@ -92,6 +115,9 @@ header {
     }
   }
 }
+h1#h1.d_header {
+  color: white;
+}
 
 footer {
   height: 4rem;
@@ -111,6 +137,8 @@ footer {
     position: relative;
     img {
       position: fixed;
+      min-width: 100%;
+      min-height: 64px;
     }
     div#outerdiv {
       position: fixed;
@@ -126,7 +154,7 @@ footer {
         display: flex;
         flex-direction: row;
         a {
-          color: $t_p;
+          color: $t_s;
           text-decoration: none;
           cursor: pointer;
           align-self: center;
@@ -141,7 +169,7 @@ footer {
           align-content: center;
           justify-content: center;
           a {
-            color: $t_p;
+            color: $t_s;
             text-decoration: none;
             cursor: pointer;
             &:hover {
@@ -156,5 +184,6 @@ footer {
   p {
     align-self: center;
     padding: 0 1rem 0 1rem;
+    color: $t_s;
   }
 }

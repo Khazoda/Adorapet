@@ -1,5 +1,5 @@
 <header>
-  <%= render partial: '/pages/header', locals: { header: "Adorapet"} %>
+  <%= render partial: '/pages/header', locals: { header: "#{t('app_title')}"} %>
 </header>
 <h1>
   <%= t('.title') %>
@@ -7,6 +7,7 @@
 <p>
   <%= t('.contact_me') %>
 </p>
+<%# Contact form, passes params from text field to contact_email.en.html.erb%>
 <%= form_with :url => request_contact_path, method: 'post',class: "contactform" do |f| %>
   <%= f.text_field :name,placeholder:"Your Name" %>
   <%= f.text_field :email,placeholder:"Your E-Mail" %>

@@ -1,8 +1,45 @@
 <div id="title">
-  <h2>Leaderboard</h2>
+  <%= content_tag(:h2,t('landing_page.leaderboard')) %>
   <div id="divider"></div>
 </div>
-<button id="testadd">Add</button>
-<div class="leaderboard_container">
-  <%# Dynamic leaderboard entries are added here from leaderboard.js%>
-</div>
+<%# Leaderboard is populated with data from db%>
+<%# The users have already been sorted by highest total likes, so are displayed correctly%>
+<%# The pets have been sorted by highest likes, but owner of the pet takes precedence, so pet leaderboard is sorted with this priority: User total likes -> Pet likes %>
+<%= content_tag(:div,"leaderboard", class:"leaderboard_container") do %>
+  <div class='lb_entry'>
+    <%= content_tag(:h2,t('landing_page.landing_page.user')) %>
+    <%= content_tag(:h2,t('landing_page.landing_page.totalLikes')) %>
+  </div>
+  <%# lbusers retrieved from landing page controller, contains all user objects retrieved from database%>
+  <% @lbusers.each do |user| %>
+    <%# Creates a new row in the leaderboard for every user with...%>
+    <% if user.avatar.attached? %>
+      <div class='lb_entry'>
+        <div class='usercontainer'>
+          <%# ...their avatar...%>
+          <%= image_tag(user.avatar,{:alt => "user_icon",class:"useravatar"})%>
+          <%# ...and their username...%>
+          <%= content_tag :h3, user.username %>
+        </div>
+        <%# ...and their aggregate likes from all of their pets...%>
+        <%= content_tag :h3, user.likes %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<%= content_tag(:div,"pet_leaderboard", class:"pet_leaderboard") do %>
+  <div class='plb_entry'>
+    <%= content_tag(:h2,t('landing_page.landing_page.pet')) %>
+    <%= content_tag(:h2,t('landing_page.landing_page.likes')) %>
+  </div>
+  <% @lbpets.each do |pet| %>
+    <div class='plb_entry'>
+      <div class='petcontainer'>
+        <%# pet names are retrieved from a tuple passed by the landing page controller%>
+        <%= content_tag :h3, pet.map{|x| x.values[1]}%>
+      </div>
+      <%# similarly, pet likes are retrieved from a tuple passed by the landing page controller%>
+      <%= content_tag :h3, pet.map{|x| x.values[6]} %>
+    </div>
+  <% end %>
+<% end %>

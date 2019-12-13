@@ -1,0 +1,83 @@
+@import 'main';
+
+main {
+  grid-template-rows: 1fr auto 1fr;
+}
+h3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  text-align: center;
+  margin-top: auto;
+}
+img {
+  max-width: 200px;
+  grid-row: 2/3;
+  &.flairL {
+    grid-column: 2/3;
+    margin-left: auto;
+  }
+  &.flairR {
+    grid-column: 4/5;
+    margin-right: auto;
+  }
+}
+form {
+  @include btn;
+  grid-column: 3/4;
+  grid-row: 3/4;
+  height: 24px;
+  justify-self: center;
+}
+div.petsContainer {
+  grid-row: 2/3;
+  grid-column: 2/5;
+  align-self: center;
+  justify-self: center;
+  height: 200px;
+  margin-bottom: 1em;
+  display: flex;
+  h2#VS {
+    color: $p;
+    font-size: 48pt;
+    line-height: 48px;
+    padding: 10px 0;
+  }
+  div {
+    @include bigsqbtn;
+    width: 200px;
+    height: 200px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+
+    outline: 2px solid $p;
+    outline-offset: -2px;
+    h3 {
+      margin: 0;
+      text-align: center;
+      max-height: 20px;
+      z-index: 10;
+      color: $pos;
+      box-shadow: 0px 2px 0px $p, 0px 3px 4px rgba(0, 0, 0, 0.4);
+    }
+    a {
+      width: auto;
+      height: auto;
+      max-width: 200px;
+      max-height: 180px;
+      image-orientation: from-image;
+
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      .petimage {
+        max-width: 180px;
+        max-height: 180px;
+        object-fit: cover;
+        outline-offset: -1px;
+      }
+    }
+  }
+}

@@ -3,14 +3,14 @@
   <div id="outerdiv">
     <div id="innerdiv">
       <div id="contactflexbox">
-        <%= link_to("Contact Me",contact_path, method: "GET") %>
+        <%= link_to(t('footer.contactme'),contact_path, method: "GET") %>
         <%# This link is only for debugging and marking, and wouldn't be in a production build%>
-        <%= link_to("<<Mailer Previews>>","/rails/mailers") %>
+        <%= link_to(t('footer.mailer'),"/rails/mailers") %>
       </div>
       <p>|</p>
-      <%= link_to("GitHub Repo","https://github.com/Khazoda/Adorapet") %>
+      <%= link_to(t('footer.github'),"https://github.com/Khazoda/Adorapet") %>
       <p>|</p>
-      <p>&copy2019 June Faleiro</p>
+      <%= content_tag :p, t('footer.copyright') %>
     </div>
   </div>
 </div>

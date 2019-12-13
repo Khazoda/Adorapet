@@ -1,20 +1,23 @@
+<div id="left">
+  <%= image_tag 'lightdark.png',id:"darktheme" %>
+</div>
 <div id="center">
   <%= content_tag :h1, header,id:"h1" %>
   <% if user_signed_in? %>
     <%# If current page is the landing page..%>
     <% if current_page?("/")%>
       <%# add play button to header%>
-      <button id="play">Play</button>
+      <%= button_to t('header.play'), game_path, id:"play",method: :get %>
       <%# else add a button to return to landing page%>
     <% else %>
-      <%= button_to 'Home', root_path, id:"gohome", method: :get %>
+      <%= button_to t('header.home'), root_path, id:"gohome", method: :get %>
     <% end %>
   <% end %>
 </div>
 <div id="right">
   <%# displays different top right elements based on user login status%>
   <% if user_signed_in? %>
-    <%= content_tag :div,content_tag(:p,"0 Likes",class:"likes")+content_tag(:p,"Position",class:"likes"),id:"likesrankcontainer"%>
+    <%= content_tag :div,content_tag(:p,current_user.likes,class:"likes")+content_tag(:p,t('header.likes'),class:"likes"),id:"likesrankcontainer"%>
     <% if current_user.avatar.attached? %>
       <%= link_to image_tag(current_user.avatar, :alt => "usericon", class:"usericon active"),profilepage_profile_path %>
     <% else %>
@@ -26,7 +29,7 @@
   <% if user_signed_in? %>
     <div>
       <%= content_tag :p, current_user.username,id:"username" %><br/>
-      <%= button_to 'Log Out', destroy_user_session_path, id:"logout", method: :delete %>
+      <%= button_to t('header.logout'), destroy_user_session_path, id:"logout", method: :delete %>
     </div>
   <% else %>
     <div id="loginsignupcontainer">

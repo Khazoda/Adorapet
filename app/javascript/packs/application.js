@@ -8,7 +8,6 @@ require("@rails/activestorage").start();
 require("channels");
 require('jquery')
 require("packs/cssalt");
-require("packs/leaderboard");
 require("packs/util/util");
 console.log("Application.js loaded");
 

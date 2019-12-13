@@ -30,11 +30,26 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: 'Hello world'
   app_title: Adorapet
+  header:
+    play: Play
+    home: Home
+    likes: Likes
+    logout: Log Out
+  footer:
+    contactme: Contact Me
+    mailer: <<Mailer Previews>>
+    github: GitHub Repo
+    copyright: '©2019 June Faleiro'
   landing_page:
     landing_page:
       title: Adorapet
+      user: User
+      totalLikes: Total Likes
+      likes: Likes
+      pet: Pet
+
+    leaderboard: 'Leaderboard'
 
     contact:
       title: Contact Me
@@ -43,3 +58,17 @@ en:
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
+
+  game:
+    h1: 'Cuteness Contest'
+    refresh: 'Refresh Pet Selection'
+    choose: 'Choose which pet you think is cuter'
+    vs: VS
+  profilepage:
+    h1: 'Profile'
+    changeavatar: 'Click to Change'
+    addpet: 'Add a new Pet'
+    name: 'Name (e.g Whiskers)'
+    species: 'Species (e.g Cat)'
+    submit: Submit
+    warning: 'Please upload a square image, or it will be resized automatically.'

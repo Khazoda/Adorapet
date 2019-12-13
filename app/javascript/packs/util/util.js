@@ -1,4 +1,4 @@
-//Reusable Cookie Functions
+//Reusable Cookie Functions, allows any kind of data to be stored as a cookie. Used in this application to store and read theme state
 function setCookie(name, value, days) {
   var expires = "";
   if (days) {
@@ -24,25 +24,9 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-function changeCSS(cssFile, cssLinkIndex) {
-  var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-
-  var newlink = document.createElement("link");
-  newlink.setAttribute("rel", "stylesheet");
-  newlink.setAttribute("type", "text/css");
-  newlink.setAttribute("href", cssFile);
-
-  document
-    .getElementsByTagName("head")
-    .item(0)
-    .replaceChild(newlink, oldlink);
-}
-
-
 
 export {
   setCookie,
   getCookie,
-  eraseCookie,
-  changeCSS
+  eraseCookie
 };

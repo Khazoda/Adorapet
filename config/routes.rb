@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'game/game_index'
   get 'profilepage/profile'
 
   devise_for :users
@@ -14,5 +15,10 @@ Rails.application.routes.draw do
 
   get 'contact' => 'landing_page#contact'
   post 'request_contact' => 'landing_page#request_contact'
+
+  get 'game' => 'game#game_index'
+  post 'game' => 'game#game_index'
+  get 'game/pick_left'
+  get 'game/pick_right'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

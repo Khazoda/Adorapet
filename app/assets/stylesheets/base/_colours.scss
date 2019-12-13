@@ -1,6 +1,7 @@
 :root {
   --focus: #{rgb(0, 255, 76)};
   --background: white;
+  --background_d: rgb(75, 75, 75);
   --t_p: black;
   --t_s: darkgrey;
   --p: black;
@@ -24,6 +25,7 @@
 $focus: var(--focus);
 
 $background: var(--background);
+$background_d: var(--background_d);
 
 $t_p: var(--t_p);
 $t_s: var(--t_s);

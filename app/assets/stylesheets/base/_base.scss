@@ -6,6 +6,10 @@ html {
   height: 100%;
 }
 
+html.d_html {
+  background-color: $background_d;
+}
+
 @font-face {
   font-family: 'manrope-regular';
   src: url(asset-path('fonts/manrope-regular.otf'));
@@ -35,7 +39,6 @@ header {
 }
 
 body {
-  background-color: $background;
   margin-right: 10px;
   margin-left: 10px;
   min-height: 100vh;
@@ -64,5 +67,20 @@ main {
     500,
     from(#777),
     to(#fff)
+  );
+}
+
+#divider.divider_d {
+  height: 2px;
+  width: 100%;
+  justify-self: center;
+  background: -webkit-gradient(
+    radial,
+    75% 75%,
+    0,
+    50% 50%,
+    500,
+    from(rgb(255, 255, 255)),
+    to($background_d)
   );
 }
