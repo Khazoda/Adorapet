@@ -27,7 +27,7 @@ gem 'jquery-turbolinks'
 
 gem 'rails-controller-testing'
 
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
